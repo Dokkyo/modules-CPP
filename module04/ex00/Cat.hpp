@@ -7,7 +7,7 @@ class Cat : public Animal
 {
     
     protected:
-        
+
         std::string _type;
 
     public:
@@ -17,8 +17,8 @@ class Cat : public Animal
         Cat& operator=(Cat & rhs);
         virtual ~Cat();
 
-        virtual void    makeSound() const;
-        virtual std::string     getType() const;
+        void    makeSound() const;
+        std::string     getType() const;
 };
 
  #endif

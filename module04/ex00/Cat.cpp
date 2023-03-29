@@ -5,7 +5,7 @@ Cat::Cat() : _type("Cat")
     std::cout << "Cat constructor called" << std::endl;
 }
 
-Cat::Cat(Cat & src)
+Cat::Cat(Cat & src) : Animal()
 {
     *this = src;
 }

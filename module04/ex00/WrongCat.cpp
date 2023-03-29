@@ -5,7 +5,7 @@ WrongCat::WrongCat() : _type("WrongCat")
     std::cout << "WrongCat constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat & src)
+WrongCat::WrongCat(WrongCat & src) : WrongAnimal()
 {
     *this = src;
 }

@@ -1,6 +1,6 @@
 #include "RPN.hpp"
 
-RPN::RPN(std::string str) : _rpn(str)
+RPN::RPN(std::string str) : _rpn(str), _nb_operands(0), _nb_operators(0)
 {
     // std::cout << "RPN Constructor Called\n";
 }
@@ -29,12 +29,19 @@ int    RPN::evaluateRPN()
     {
         if (isdigit(c)){
         {
+            _nb_operands++;
             this->_stk.push(c - '0');
         }
         } else if (isspace(c)){
             ;
         }
         else if(c == '+' || c == '-' || c == '*' || c == '/'){
+            _nb_operators++;
+            if (_nb_operators >= _nb_operands)
+            {
+                std::cout << "Error\n";
+                return -1;
+            }
             long op2 = this->_stk.top(); this->_stk.pop();
             long op1 = this->_stk.top(); this->_stk.pop();
             switch (c) {
